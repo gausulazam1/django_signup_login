@@ -10,7 +10,17 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
+import os
 from pathlib import Path
+
+
+
+
+
+
+
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,7 +33,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-j8(8y8lxxg9$n*_zd5r6xpl04txl5#@w42!@_4k9m#6t=jfas*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG =  True
 
 ALLOWED_HOSTS = []
 
@@ -126,3 +136,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+STATIC_ROOT = os.environ.get("STATIC_ROOT", BASE_DIR / "staticfiles")
